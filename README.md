@@ -1,7 +1,18 @@
-# Poet
 根据 sql 创建 Doamin Repository Service java 文件
 
 依赖生成java文件库 https://github.com/square/javapoet
+
+```Java
+CREATE TABLE `code_record` (
+  `id` int(255) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `productCode` varchar(255) DEFAULT NULL COMMENT '商品编码',
+  `orders` int(11) DEFAULT NULL COMMENT '批次',
+  `totalCount` int(11) DEFAULT NULL COMMENT '打印数量',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1329 DEFAULT CHARSET=utf8;
+
+
+```
 
 ```Java
 package com.sq.wms.domain;
@@ -65,6 +76,7 @@ public class HelloCdp {
 }
 ```
 
+```Java
 package com.sq.wms.repository.mysql;
 
 import com.sq.wms.domain.HelloCdp;
@@ -82,6 +94,9 @@ public interface HelloCdpRepository extends JpaRepository<HelloCdp, Long> {
 
   HelloCdp findByTotalCount(Integer totalCount);
 }
+```
+
+```Java
 package com.sq.wms.service;
 
 import com.sq.wms.domain.HelloCdp;
@@ -112,4 +127,4 @@ public class HelloCdpService {
     return helloCdpRepository.findByTotalCount(totalCount);
   }
 }
-
+```
