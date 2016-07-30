@@ -2,6 +2,8 @@
 
 依赖生成java文件库 https://github.com/square/javapoet
 
+####Sql
+
 ```Java
 CREATE TABLE `code_record` (
   `id` int(255) NOT NULL AUTO_INCREMENT COMMENT '主键',
@@ -13,6 +15,8 @@ CREATE TABLE `code_record` (
 
 
 ```
+
+####Domain
 
 ```Java
 package com.sq.wms.domain;
@@ -76,6 +80,8 @@ public class HelloCdp {
 }
 ```
 
+####Repository
+
 ```Java
 package com.sq.wms.repository.mysql;
 
@@ -95,6 +101,8 @@ public interface HelloCdpRepository extends JpaRepository<HelloCdp, Long> {
   HelloCdp findByTotalCount(Integer totalCount);
 }
 ```
+
+####Service
 
 ```Java
 package com.sq.wms.service;
